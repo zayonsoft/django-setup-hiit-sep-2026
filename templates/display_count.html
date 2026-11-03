@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Displaying Count</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">COUNT RESULT</h1>
+
+    <h2 style="text-align: center">The text you sent is: {{text}}</h2>
+    {% if request.method == "POST" %}
+    <h2 style="text-align: center">
+      The text you sent is: {{request.POST.text}}
+    </h2>
+    {% else %}
+    <h2 style="text-align: center">
+      The text you sent is: {{request.GET.text}}
+    </h2>
+    {% endif %}
+    <h2 style="text-align: center">The Amount of Words is: {{count}}</h2>
+    <h2><a href="/">Go back home</a></h2>
+  </body>
+</html>

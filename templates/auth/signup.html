@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <style>
+      .errorlist li {
+        color: red;
+      }
+    </style>
+  </head>
+  <body style="padding-block: 40px; padding-inline: 80px">
+    <form action="" method="POST">
+      {% csrf_token %}<br />
+      {% for message in messages %}
+      <h2>{{message}}</h2>
+      {% endfor %}
+      <h1>Create User Form</h1>
+      {{user_form.as_p}}
+      <button type="submit">Submit</button>
+      <p>
+        Already have an account? <a href="{% url 'signin_user' %}">Sign-In</a>
+      </p>
+    </form>
+  </body>
+</html>

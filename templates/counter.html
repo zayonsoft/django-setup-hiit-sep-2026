@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      .text-area {
+        height: 40vh;
+        resize: none;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: block; width: 100%">
+      <h1 style="text-align: center">Our Counter</h1>
+      <form
+        style="margin: auto; max-width: fit-content"
+        action="/counter/result"
+      >
+        <textarea class="text-area" name="text" id=""></textarea><br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

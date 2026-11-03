@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Products</title>
+  </head>
+  <body>
+    <form
+      style="padding: 100px"
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <h1>Edit Product</h1>
+      {{form.as_p}}
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

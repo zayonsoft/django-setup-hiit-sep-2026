@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article style="padding-inline: 100px">
+      <h2>Name: {{p.name}}</h2>
+      {% if p.image %}
+      <div>
+        <img src="{{p.image.url}}" alt="{{p.name}}" />
+      </div>
+      {% else %}
+      <code>No Image to display</code>
+      {% endif %}
+
+      <p>{{p.description }}</p>
+      <p><b>Price:</b> #{{p.price}}</p>
+      <p><b>Quantity available:</b> {{p.quantity}}</p>
+      <p><b>Time Added:</b> {{p.time_added}}</p>
+      <p><b>Last updated:</b> {{p.last_updated}}</p>
+      <p><b>Uploaded by:</b> {{p.uploaded_by}}</p>
+    </article>
+  </body>
+</html>

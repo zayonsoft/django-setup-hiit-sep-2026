@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-in</title>
+  </head>
+  <body style="padding-inline: 60px">
+    <h1>Sign-In</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <br />
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+      <input placeholder="Username" type="text" name="username" /><br /><br />
+      <input
+        placeholder="Password"
+        type="password"
+        name="password"
+      /><br /><br />
+      <button type="submit">Submit</button>
+      <p>
+        Dont have an account?
+        <a href="{% url 'create_user' %}">Create account</a>
+      </p>
+    </form>
+  </body>
+</html>

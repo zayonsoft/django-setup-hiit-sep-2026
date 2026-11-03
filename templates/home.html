@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page right here</title>
+    <!-- <link rel="stylesheet" href="../static/styles.css" /> -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body>
+    <h2><a href="/auth/signup">Sign-in/Sign-up</a></h2>
+    <h1>This is my home page</h1>
+    <p>Welcome to HiiT</p>
+    <h2>This is from <code>home.html</code></h2>
+    <h2>Name of dev is: {{dev}}</h2>
+    <h2>The age: {{age}}</h2>
+
+    <div>
+      <p>Here is the list of Students in class on October 8th 2026:</p>
+      <ul>
+        {% for c in class_list %}
+        <li>{{c}}</li>
+        {% endfor %}
+      </ul>
+      <h3>See our image</h3>
+      <img src="../static/images/ann_img.jpeg" alt="Announcement Image" />
+      <img src="{% static 'images/ann_img.jpeg' %}" alt="Announcement Image" />
+      <h3>
+        <a href="/counter">Click here to go to counter</a><br />
+        <a href="/counter/post">Click here to go to counter post version</a
+        ><br />
+        <a href="/products">View Our Products here</a><br />
+        <a href="{% url 'products' %}">View Our Products here</a><br />
+      </h3>
+    </div>
+  </body>
+</html>
