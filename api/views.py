@@ -71,7 +71,7 @@ class ProductView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
 
-            return Response({"detail": "product updated"})
+            return Response({"detail": "product has been updated"})
 
     def put(self, request, pk):
         product = get_object_or_404(Product, id=pk)
