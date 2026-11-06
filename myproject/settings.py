@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 
 from pathlib import Path
 import os
+import dotenv
+
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,6 +139,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MAILERS = {
     "default": {
-        "BACKEND": "django.core.mail.backends.console.EmailBackend",
+        "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+        "OPTIONS": {
+            "host": "smtp.gmail.com",
+            "port": 587,
+            "use_tls": True,
+            "use_ssl": False,
+            "username": os.environ.get("EMAIL"),
+            "password": os.environ.get("EMAIL_PASSWORD"),
+        },
     },
 }
+
+DEFAULT_FROM_EMAIL = os.environ.get("EMAIL")
